@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import config from '@/config';
 import { ThrottlerModule, seconds } from '@nestjs/throttler';
+import { DatabaseModule } from './shared/database/database.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -14,8 +15,8 @@ import { ThrottlerModule, seconds } from '@nestjs/throttler';
         throttlers: [{ ttl: seconds(10), limit: 10 }],
       }),
     }),
+    DatabaseModule,
   ],
-  controllers: [],
   providers: [],
 })
 export class AppModule {}

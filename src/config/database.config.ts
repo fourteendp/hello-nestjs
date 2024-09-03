@@ -6,7 +6,7 @@ const dataSourceOptions: DataSourceOptions = {
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: '123@PGSql',
+  password: '123@PSql',
   database: 'postgres',
   schema: 'public',
   synchronize: true,
